@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'demo/bottomNavigationBar_demo.dart';
+import 'demo/bottom_navigation_bar.dart';
 import 'demo/drawer_demo.dart';
 
 void main() => runApp(App());
