@@ -4,7 +4,19 @@ class BasicDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[100],
+      // color: Colors.grey[100],
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage('https://resources.ninghao.org/images/say-hello-to-barry.jpg'),
+          alignment: Alignment.topCenter,
+          // repeat: ImageRepeat.repeat,
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            Colors.indigoAccent[400].withOpacity(0.5), 
+            BlendMode.hardLight,
+          )
+        ),  
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -31,7 +43,7 @@ class BasicDemo extends StatelessWidget {
                   spreadRadius: -3.0
                 ),
               ],
-              shape: BoxShape.rectangle,
+              shape: BoxShape.circle,
               // gradient: RadialGradient(
               //   colors: [
               //     Color.fromRGBO(7, 102, 255, 1.0),
@@ -45,7 +57,8 @@ class BasicDemo extends StatelessWidget {
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-              )
+              ),
+
             ),
           )
         ]
