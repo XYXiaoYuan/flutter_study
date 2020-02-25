@@ -8,9 +8,9 @@ class LayoutDemo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           SizedBox(
+            width: 200.0,
+            height: 300.0,
             child: Container(
-              width: 200.0,
-              height: 300.0,
               decoration: BoxDecoration(
                 color: Color.fromRGBO(3, 54, 255, 1.0),
                 borderRadius: BorderRadius.circular(8.0)
@@ -20,9 +20,9 @@ class LayoutDemo extends StatelessWidget {
           ),
           SizedBox(height: 32.0),
           SizedBox(
+            width: 100.0,
+            height: 100.0,
             child: Container(
-              width: 100.0,
-              height: 100.0,
               decoration: BoxDecoration(
                 color: Color.fromRGBO(3, 54, 255, 1.0),
                 borderRadius: BorderRadius.circular(8.0)
