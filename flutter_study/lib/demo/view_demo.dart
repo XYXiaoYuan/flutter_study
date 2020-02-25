@@ -2,6 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_study/model/post.dart';
 
 class ViewDemo extends StatelessWidget {
+  List<Widget> _buildTiles(int length) {
+    return List.generate(length, (int index) {
+      return Container(
+          color: Colors.grey[300],
+          alignment: Alignment(0.0, 0.0),
+          child: Text(
+            'Item: $index',
+            style: TextStyle(fontSize: 18.0, color: Colors.grey),
+          ),
+        );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 3,
+      crossAxisSpacing: 16.0,
+      mainAxisSpacing: 16.0,
+      scrollDirection: Axis.vertical,
+      children: _buildTiles(100)
+    );
+  }
+}
+
+class PageViewBuildDemo extends StatelessWidget {
   Widget _pageItemBuilder(BuildContext context, int index) {
     return Stack(
       children: <Widget>[
@@ -23,7 +49,7 @@ class ViewDemo extends StatelessWidget {
               ),
               Text(
                 posts[index].author,
-              ),
+              )
             ]
           ),
         ),
@@ -38,9 +64,6 @@ class ViewDemo extends StatelessWidget {
       itemBuilder: _pageItemBuilder,
     );
   }
-}
-
-class Cro {
 }
 
 class PageViewDemo extends StatelessWidget {
