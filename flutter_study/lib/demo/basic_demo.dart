@@ -28,9 +28,10 @@ class BasicDemo extends StatelessWidget {
                   offset: Offset(0.0, 16.0),
                   color: Color.fromRGBO(3, 54, 255, 1.0),
                   blurRadius: 25.0,
-                  spreadRadius: -9.0
+                  spreadRadius: -3.0
                 ),
               ],
+              shape: BoxShape.rectangle,
             ),
           )
         ]
