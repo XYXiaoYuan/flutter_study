@@ -35,13 +35,15 @@ class Home extends StatelessWidget {
               ],
               elevation: 0.0,
               bottom: TabBar(
+                unselectedLabelColor: Colors.black38,
                 tabs: <Widget>[
                   Tab(icon: Icon(Icons.local_florist)),
                   Tab(icon: Icon(Icons.change_history)),
                   Tab(icon: Icon(Icons.directions_bike)),
                 ],
-                indicatorColor: Colors.white,
-                indicatorWeight: 2,
+                indicatorColor: Colors.black54,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicatorWeight: 1.0,
               ),
             ),
             body: TabBarView(children: <Widget>[
