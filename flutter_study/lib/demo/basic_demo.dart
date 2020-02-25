@@ -21,7 +21,8 @@ class BasicDemo extends StatelessWidget {
                 color: Colors.indigoAccent[100],
                 width: 3.0,
                 style: BorderStyle.solid
-              )
+              ),
+              borderRadius: BorderRadius.circular(16.0)
             ),
           )
         ]
