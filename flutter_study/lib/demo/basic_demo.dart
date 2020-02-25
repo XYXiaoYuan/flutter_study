@@ -1,9 +1,39 @@
 import 'package:flutter/material.dart';
 
 class BasicDemo extends StatelessWidget {
-  final TextStyle _textStyle = TextStyle(
-    fontSize: 16.0
-  );
+  @override
+  Widget build(BuildContext context) {
+    return RichTextDemo();
+  }
+}
+
+class RichTextDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        text: 'bruceyuan',
+        style: TextStyle(
+            color: Colors.deepPurpleAccent,
+            fontSize: 34.0,
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.w100),
+        children: [
+          TextSpan(
+            text: '.net',
+            style: TextStyle(
+              fontSize: 17.0,
+              color: Colors.grey,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class TextDemo extends StatelessWidget {
+  final TextStyle _textStyle = TextStyle(fontSize: 16.0);
 
   final String _author = '李白';
   final String _title = '将进酒';
