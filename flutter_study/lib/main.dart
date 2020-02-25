@@ -14,7 +14,7 @@ class App extends StatelessWidget {
         theme: ThemeData(
             primaryColor: Colors.yellow,
             highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-            splashColor: Colors.redAccent));
+            splashColor: Colors.deepPurple));
   }
 }
 
