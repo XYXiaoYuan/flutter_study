@@ -21,10 +21,12 @@ class GridViewBuilderDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      padding: EdgeInsets.all(8.0),
       itemCount: posts.length,
       itemBuilder: _gridItemBuilder,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        // crossAxisCount: 3,
+        maxCrossAxisExtent: 150,
         crossAxisSpacing: 8.0,
         mainAxisSpacing: 8.0
       ),
