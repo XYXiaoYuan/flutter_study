@@ -7,6 +7,12 @@ class SliverDemo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
+          SliverAppBar(
+            title: Text('BruceYuan'),
+            // pinned: true,
+            floating: true,
+            
+          ),
           SliverSafeArea(
             sliver: SliverPadding(
               padding: EdgeInsets.all(8.0),
@@ -73,7 +79,6 @@ class SliverListDemo extends StatelessWidget {
     );
   }
 }
-
 
 class SliverGridDemo extends StatelessWidget {
   @override
