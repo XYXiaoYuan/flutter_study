@@ -22,7 +22,7 @@ class BasicDemo extends StatelessWidget {
                 width: 3.0,
                 style: BorderStyle.solid
               ),
-              borderRadius: BorderRadius.circular(16.0),
+              // borderRadius: BorderRadius.circular(16.0),
               boxShadow: [
                 BoxShadow(
                   offset: Offset(0.0, 16.0),
@@ -32,6 +32,20 @@ class BasicDemo extends StatelessWidget {
                 ),
               ],
               shape: BoxShape.rectangle,
+              // gradient: RadialGradient(
+              //   colors: [
+              //     Color.fromRGBO(7, 102, 255, 1.0),
+              //     Color.fromRGBO(3, 28, 128, 1.0)
+              //   ]
+              // ),
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromRGBO(7, 102, 255, 1.0),
+                  Color.fromRGBO(3, 28, 128, 1.0)
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              )
             ),
           )
         ]
