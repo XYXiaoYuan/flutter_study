@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'demo/bottomNavigationBar_demo.dart';
+import 'demo/drawer_demo.dart';
+
 void main() => runApp(App());
 
 class App extends StatelessWidget {
@@ -16,11 +19,6 @@ class App extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-
-  // ListTile _buildListTile(String text, String icon) {
-
-  // }
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -54,46 +52,8 @@ class Home extends StatelessWidget {
               Icon(Icons.change_history, size: 128.0, color: Colors.black12),
               Icon(Icons.directions_bike, size: 128.0, color: Colors.black12),
           ]),
-          drawer: Drawer(
-              child: ListView(
-              padding: EdgeInsets.zero,
-              children: <Widget>[
-                UserAccountsDrawerHeader(
-                  accountName: Text('Bruceyuan', style: TextStyle(fontWeight: FontWeight.bold)), 
-                  accountEmail: Text('664995775@qq.com'),
-                  currentAccountPicture: CircleAvatar(
-                    backgroundImage: NetworkImage('https://resources.ninghao.org/images/wanghao.jpg')
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.yellow[400],
-                    image: DecorationImage(
-                      image: NetworkImage('https://resources.ninghao.org/images/childhood-in-a-picture.jpg'),
-                      fit: BoxFit.cover,
-                      colorFilter: ColorFilter.mode(
-                        Colors.yellow[400].withOpacity(0.6), 
-                        BlendMode.srcOver
-                      )
-                    )
-                  ),
-                ),
-                ListTile(
-                  title: Text('Message', textAlign: TextAlign.right),
-                  trailing: Icon(Icons.message, color: Colors.black12, size: 22.0),
-                  onTap: () => Navigator.pop(context),
-                ),
-                ListTile(
-                  title: Text('Favorite', textAlign: TextAlign.right),
-                  trailing: Icon(Icons.favorite, color: Colors.black12, size: 22.0),
-                  onTap: () => Navigator.pop(context),
-                ),
-                ListTile(
-                  title: Text('Settings', textAlign: TextAlign.right),
-                  trailing: Icon(Icons.settings, color: Colors.black12, size: 22.0),
-                  onTap: () => Navigator.pop(context),
-                )
-            ],
-          )
-        ),
+          drawer: DrawerDemo(),
+          bottomNavigationBar: BottomNavigationBarDemo(),
       )
     );
   }
