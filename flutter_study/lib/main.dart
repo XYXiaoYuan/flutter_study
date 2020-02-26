@@ -14,12 +14,17 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: NavigatorDemo(),
-        theme: ThemeData(
-            primaryColor: Colors.yellow,
-            highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-            splashColor: Colors.deepPurple));
+      debugShowCheckedModeBanner: false,
+      home: NavigatorDemo(),
+      routes: {
+        '/about': (context) => Page(title: 'About'),
+      },
+      theme: ThemeData(
+          primaryColor: Colors.yellow,
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: Colors.deepPurple
+      )
+    );
   }
 }
 
