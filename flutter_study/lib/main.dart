@@ -4,9 +4,8 @@ import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/drawer_demo.dart';
-import 'demo/navigator_demo.dart';
 import 'demo/sliver_demo.dart';
-import 'demo/view_demo.dart';
+import 'demo/navigator_demo.dart';
 
 void main() => runApp(App());
 
@@ -15,8 +14,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavigatorDemo(),
+      // home: Home(),
+      initialRoute: '/',
       routes: {
+        '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
       },
       theme: ThemeData(
