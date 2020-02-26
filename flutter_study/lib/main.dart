@@ -4,6 +4,7 @@ import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/drawer_demo.dart';
+import 'demo/navigator_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/view_demo.dart';
 
@@ -14,7 +15,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home(),
+        home: NavigatorDemo(),
         theme: ThemeData(
             primaryColor: Colors.yellow,
             highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
@@ -52,7 +53,7 @@ class Home extends StatelessWidget {
             ),
           ),
           body: TabBarView(
-            children: <Widget>[
+            children: <Widget>[ 
               ListViewDemo(),
               BasicDemo(),
               LayoutDemo(),
