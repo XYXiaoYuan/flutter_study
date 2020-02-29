@@ -4,7 +4,9 @@ import 'package:flutter_study/demo/popup_menu_button_demo.dart';
 import 'package:flutter_study/demo/util/tab_navigator.dart';
 
 import 'button_demo.dart';
+import 'checkbox_demo.dart';
 import 'floating_action_demo.dart';
+import 'form_demo.dart';
 
 class MaterialComponent extends StatelessWidget {
   @override
@@ -16,6 +18,8 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'CheckBox', page: CheckBoxDemo()),
+          ListItem(title: 'Form', page: FormDemo()),
           ListItem(title: 'Button', page: ButtonDemo()),
           ListItem(title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
           ListItem(title: 'PopupMenuButton', page: PopupMenuButtonDemo()),
