@@ -61,6 +61,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
           TextFormField(
             decoration: InputDecoration(
               labelText: 'Username',
+              helperText: '',
             ),
             onSaved: (value) {
               username = value;
@@ -71,6 +72,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
             obscureText: true,
             decoration: InputDecoration(
               labelText: 'Password',
+              helperText: '',
             ),
             onSaved: (value) {
               password = value;
