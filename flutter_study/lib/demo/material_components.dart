@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_study/demo/popup_menu_button_demo.dart';
 import 'package:flutter_study/demo/util/tab_navigator.dart';
 
 class MaterialComponent extends StatelessWidget {
@@ -12,7 +13,8 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          ListItem(title: 'ButtonDemo', page: ButtonDemo()),
+          ListItem(title: 'PopupMenuButton', page: PopupMenuButtonDemo()),
+          ListItem(title: 'Button', page: ButtonDemo()),
           ListItem(title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
         ],
       )
