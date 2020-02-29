@@ -18,10 +18,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: Home(),
-      initialRoute: '/',
+      initialRoute: '/mdc',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
+        '/mdc': (context) => MaterialComponent(),
       },
       theme: ThemeData(
         primaryColor: Colors.yellow,

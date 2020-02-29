@@ -23,6 +23,25 @@ class MaterialComponent extends StatelessWidget {
 class ButtonDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+  final Widget FlatButtonDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        FlatButton(
+          onPressed: () {},
+          child: Text('Button'),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        ),
+        FlatButton.icon(
+          onPressed: () {},
+          icon: Icon(Icons.add),
+          label: Text('Add Button'),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        ),
+      ],
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ButtonDemo'),
@@ -36,7 +55,19 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                
+                FlatButton(
+                  onPressed: () {},
+                  child: Text('Button'),
+                  splashColor: Colors.grey,
+                  textColor: Theme.of(context).accentColor,
+                ),
+                FlatButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.add),
+                  label: Text('Add Button'),
+                  splashColor: Colors.grey,
+                  textColor: Theme.of(context).accentColor,
+                ),
               ],
             )
           ],
