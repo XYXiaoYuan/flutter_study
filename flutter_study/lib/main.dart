@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'demo/basic_demo.dart';
+import 'demo/form_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
@@ -15,10 +16,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: Home(),
-      initialRoute: '/',
+      initialRoute: '/form',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
+        '/form': (context) => FormDemo()
       },
       theme: ThemeData(
           primaryColor: Colors.yellow,
