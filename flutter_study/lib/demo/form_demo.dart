@@ -51,9 +51,9 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
   Widget build(BuildContext context) {
     return TextField(
       controller: textEditingController,
-      // onChanged: (value) {
-      //   debugPrint('input: $value');
-      // },
+      onChanged: (value) {
+        debugPrint('input: $value');
+      },
       onSubmitted: (value) {
         debugPrint('submit: $value');
       },
