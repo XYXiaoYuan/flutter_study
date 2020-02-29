@@ -116,6 +116,63 @@ class ButtonDemo extends StatelessWidget {
       ],
     );
 
+    final Widget FixWidthButton = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          width: 130.0,
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text('Button'),
+            splashColor: Colors.grey,
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            // color: Theme.of(context).accentColor,
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+      ],
+    );
+
+    final Widget ExpandedButton = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Expanded(
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text('Button'),
+            splashColor: Colors.grey,
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            // color: Theme.of(context).accentColor,
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+        SizedBox(width: 16.0),
+        Expanded(
+          flex: 2,
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text('Button'),
+            splashColor: Colors.grey,
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            // color: Theme.of(context).accentColor,
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+      ],
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ButtonDemo'),
@@ -129,17 +186,7 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Theme(
-                  data: Theme.of(context).copyWith(
-                    buttonColor: Theme.of(context).accentColor,
-                    buttonTheme: ButtonThemeData(
-                      textTheme: ButtonTextTheme.primary,
-                      // shape: BeveledRectangleBorder(
-                      //   borderRadius: BorderRadius.circular(5.0),
-                      // )
-                      shape: StadiumBorder()
-                    )
-                  ),
+                Expanded(
                   child: OutlineButton(
                     onPressed: () {},
                     child: Text('Button'),
@@ -154,13 +201,22 @@ class ButtonDemo extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 16.0),
-                OutlineButton.icon(
-                  onPressed: () {},
-                  icon: Icon(Icons.add),
-                  label: Text('Add Button'),
-                  splashColor: Colors.grey,
-                  textColor: Theme.of(context).accentColor,
+                Expanded(
+                  flex: 2,
+                  child: OutlineButton(
+                    onPressed: () {},
+                    child: Text('Button'),
+                    splashColor: Colors.grey,
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ),
+                    // color: Theme.of(context).accentColor,
+                    textColor: Colors.black,
+                    highlightedBorderColor: Colors.grey,
+                    // textTheme: ButtonTextTheme.primary,
+                  ),
                 ),
+
               ],
             ),
           ],
