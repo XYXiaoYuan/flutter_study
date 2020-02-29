@@ -173,6 +173,45 @@ class ButtonDemo extends StatelessWidget {
       ],
     );
 
+    final Widget ButtonBarDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Theme(
+          data: Theme.of(context).copyWith(
+            buttonTheme: ButtonThemeData(
+              padding: EdgeInsets.symmetric(horizontal: 64.0),
+            )
+          ),
+          child: ButtonBar(
+            children: <Widget>[
+              OutlineButton(
+                onPressed: () {},
+                child: Text('Button'),
+                splashColor: Colors.grey,
+                borderSide: BorderSide(
+                  color: Colors.black,
+                ),
+                // color: Theme.of(context).accentColor,
+                textColor: Colors.black,
+                highlightedBorderColor: Colors.grey,
+              ),
+              OutlineButton(
+                onPressed: () {},
+                child: Text('Button'),
+                splashColor: Colors.grey,
+                borderSide: BorderSide(
+                  color: Colors.black,
+                ),
+                // color: Theme.of(context).accentColor,
+                textColor: Colors.black,
+                highlightedBorderColor: Colors.grey,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ButtonDemo'),
@@ -186,37 +225,39 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Expanded(
-                  child: OutlineButton(
-                    onPressed: () {},
-                    child: Text('Button'),
-                    splashColor: Colors.grey,
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                    // color: Theme.of(context).accentColor,
-                    textColor: Colors.black,
-                    highlightedBorderColor: Colors.grey,
-                    // textTheme: ButtonTextTheme.primary,
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    buttonTheme: ButtonThemeData(
+                      padding: EdgeInsets.symmetric(horizontal: 64.0),
+                    )
+                  ),
+                  child: ButtonBar(
+                    children: <Widget>[
+                      OutlineButton(
+                        onPressed: () {},
+                        child: Text('Button'),
+                        splashColor: Colors.grey,
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                        ),
+                        // color: Theme.of(context).accentColor,
+                        textColor: Colors.black,
+                        highlightedBorderColor: Colors.grey,
+                      ),
+                      OutlineButton(
+                        onPressed: () {},
+                        child: Text('Button'),
+                        splashColor: Colors.grey,
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                        ),
+                        // color: Theme.of(context).accentColor,
+                        textColor: Colors.black,
+                        highlightedBorderColor: Colors.grey,
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(width: 16.0),
-                Expanded(
-                  flex: 2,
-                  child: OutlineButton(
-                    onPressed: () {},
-                    child: Text('Button'),
-                    splashColor: Colors.grey,
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                    // color: Theme.of(context).accentColor,
-                    textColor: Colors.black,
-                    highlightedBorderColor: Colors.grey,
-                    // textTheme: ButtonTextTheme.primary,
-                  ),
-                ),
-
               ],
             ),
           ],
