@@ -78,6 +78,44 @@ class ButtonDemo extends StatelessWidget {
       ],
     );
 
+    final Widget OutlineButtonDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Theme(
+          data: Theme.of(context).copyWith(
+            buttonColor: Theme.of(context).accentColor,
+            buttonTheme: ButtonThemeData(
+              textTheme: ButtonTextTheme.primary,
+              // shape: BeveledRectangleBorder(
+              //   borderRadius: BorderRadius.circular(5.0),
+              // )
+              shape: StadiumBorder()
+            )
+          ),
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text('Button'),
+            splashColor: Colors.grey,
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+            // color: Theme.of(context).accentColor,
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+            // textTheme: ButtonTextTheme.primary,
+          ),
+        ),
+        SizedBox(width: 16.0),
+        OutlineButton.icon(
+          onPressed: () {},
+          icon: Icon(Icons.add),
+          label: Text('Add Button'),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        ),
+      ],
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ButtonDemo'),
@@ -102,24 +140,26 @@ class ButtonDemo extends StatelessWidget {
                       shape: StadiumBorder()
                     )
                   ),
-                  child: RaisedButton(
+                  child: OutlineButton(
                     onPressed: () {},
                     child: Text('Button'),
                     splashColor: Colors.grey,
-                    elevation: 0.0,
-                    color: Theme.of(context).accentColor,
-                    // textColor: Theme.of(context).accentColor,
-                    textTheme: ButtonTextTheme.primary,
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ),
+                    // color: Theme.of(context).accentColor,
+                    textColor: Colors.black,
+                    highlightedBorderColor: Colors.grey,
+                    // textTheme: ButtonTextTheme.primary,
                   ),
                 ),
                 SizedBox(width: 16.0),
-                RaisedButton.icon(
+                OutlineButton.icon(
                   onPressed: () {},
                   icon: Icon(Icons.add),
                   label: Text('Add Button'),
                   splashColor: Colors.grey,
                   textColor: Theme.of(context).accentColor,
-                  elevation: 16.0,
                 ),
               ],
             ),
