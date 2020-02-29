@@ -30,12 +30,19 @@ class RegisterDemo extends StatefulWidget {
 class _RegisterDemoState extends State<RegisterDemo> {
   final registerFormKey = GlobalKey<FormState>();
   String username, password;
+  bool _autovalidate = false;
 
   void _submiteRegisterForm() {
-    registerFormKey.currentState.save();
-    registerFormKey.currentState.validate();
-    debugPrint('username: $username');
-    debugPrint('password: $password');
+    if (registerFormKey.currentState.validate()) {
+      registerFormKey.currentState.save();
+
+      debugPrint('username: $username');
+      debugPrint('password: $password');
+    } else {
+      setState(() {
+        _autovalidate = true;
+      });
+    }
   }
 
   String _validatorUsername(value) {
@@ -67,6 +74,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
               username = value;
             },
             validator: _validatorUsername,
+            autovalidate: _autovalidate,
           ),
           TextFormField(
             obscureText: true,
@@ -78,6 +86,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
               password = value;
             },
             validator: _validatorPassword,
+            autovalidate: _autovalidate,
           ),
           SizedBox(height: 32.0),
           Container(
