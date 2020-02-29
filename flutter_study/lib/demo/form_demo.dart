@@ -28,10 +28,43 @@ class TextFieldDemo extends StatefulWidget {
 }
 
 class _TextFieldDemoState extends State<TextFieldDemo> {
+  final textEditingController = TextEditingController();
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // textEditingController.text = 'hi';
+    textEditingController.addListener(
+      () {
+        debugPrint('input: ${textEditingController.text}');
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextField(
-      
+      controller: textEditingController,
+      // onChanged: (value) {
+      //   debugPrint('input: $value');
+      // },
+      onSubmitted: (value) {
+        debugPrint('submit: $value');
+      },
+      decoration: InputDecoration(
+        icon: Icon(Icons.subject),
+        labelText: 'Title',
+        hintText: 'Enter the post title',
+        // border: InputBorder.none,
+        // border: OutlinenputBorder(),
+        filled: true,
+      )
     );
   }
 }
