@@ -33,8 +33,23 @@ class _RegisterDemoState extends State<RegisterDemo> {
 
   void _submiteRegisterForm() {
     registerFormKey.currentState.save();
+    registerFormKey.currentState.validate();
     debugPrint('username: $username');
     debugPrint('password: $password');
+  }
+
+  String _validatorUsername(value) {
+    if (value.isEmpty) {
+      return 'Username is required';
+    }
+    return null;
+  }
+
+  String _validatorPassword(value) {
+    if (value.isEmpty) {
+      return 'Password is required';
+    }
+    return null;
   }
 
   @override
@@ -50,6 +65,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
             onSaved: (value) {
               username = value;
             },
+            validator: _validatorUsername,
           ),
           TextFormField(
             obscureText: true,
@@ -59,6 +75,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
             onSaved: (value) {
               password = value;
             },
+            validator: _validatorPassword,
           ),
           SizedBox(height: 32.0),
           Container(
