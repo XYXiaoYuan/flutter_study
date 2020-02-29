@@ -98,16 +98,17 @@ class PageViewBuildDemo extends StatelessWidget {
           bottom: 8.0,
           left: 8.0,
           child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  posts[index].title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  posts[index].author,
-                )
-              ]),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                posts[index].title,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(
+                posts[index].author,
+              )
+            ]
+          ),
         ),
       ],
     );

@@ -15,7 +15,7 @@ class BasicDemo extends StatelessWidget {
             Colors.indigoAccent[400].withOpacity(0.5), 
             BlendMode.hardLight,
           )
-        ),  
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
