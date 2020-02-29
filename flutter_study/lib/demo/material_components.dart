@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_study/demo/popup_menu_button_demo.dart';
+import 'package:flutter_study/demo/radio_demo.dart';
 import 'package:flutter_study/demo/util/tab_navigator.dart';
 
 import 'button_demo.dart';
@@ -18,6 +19,7 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'Radio', page: RadioDemo()),
           ListItem(title: 'CheckBox', page: CheckBoxDemo()),
           ListItem(title: 'Form', page: FormDemo()),
           ListItem(title: 'Button', page: ButtonDemo()),

@@ -21,8 +21,6 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
-        '/about': (context) => Page(title: 'About'),
-        '/mdc': (context) => MaterialComponent(),
       },
       theme: ThemeData(
         primaryColor: Colors.yellow,
@@ -45,8 +43,8 @@ class Home extends StatelessWidget {
           actions: <Widget>[
             _IconButton(
               icon: Icon(Icons.input),
-              tooltip: 'Input',
-              page: FormDemo()
+              tooltip: 'About',
+              page: Page(title: 'About')
             ),
             _IconButton(
               icon: Icon(Icons.search),
@@ -55,6 +53,18 @@ class Home extends StatelessWidget {
             ),
           ],
           elevation: 0.0,
+          bottom: TabBar(
+            unselectedLabelColor: Colors.black38,
+            indicatorColor: Colors.black54,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorWeight: 1.0,
+            tabs: <Widget>[
+              Tab(icon: Icon(Icons.local_florist)),
+              Tab(icon: Icon(Icons.change_history)),
+              Tab(icon: Icon(Icons.directions_bike)),
+              Tab(icon: Icon(Icons.view_quilt)),
+            ],
+          ),
         ),
         backgroundColor: Colors.grey[100],
         body: TabBarView(children: <Widget>[
@@ -66,6 +76,15 @@ class Home extends StatelessWidget {
         drawer: DrawerDemo(),
         bottomNavigationBar: BottomNavigationBarDemo(),
       )
+    );
+  }
+}
+
+class _HomeTabBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
 }
