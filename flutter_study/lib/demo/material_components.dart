@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study/demo/form_demo.dart';
 import 'package:flutter_study/demo/popup_menu_button_demo.dart';
+import 'package:flutter_study/demo/slider_demo.dart';
 import 'package:flutter_study/demo/switch_demo.dart';
 import 'package:flutter_study/demo/util/tab_navigator.dart';
 
@@ -18,6 +19,7 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'SliderDemo', page: SliderDemo()),
           ListItem(title: 'Switch', page: SwitchDemo()),
           ListItem(title: 'Form', page: FormDemo()),
           ListItem(title: 'Button', page: ButtonDemo()),
