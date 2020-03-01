@@ -8,6 +8,7 @@ import 'package:flutter_study/demo/switch_demo.dart';
 import 'package:flutter_study/demo/util/tab_navigator.dart';
 
 import 'alert_dialog_demo.dart';
+import 'bottom_sheet_demo.dart';
 import 'button_demo.dart';
 import 'datetime_demo.dart';
 import 'floating_action_demo.dart';
@@ -22,6 +23,7 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'BottomSheet', page: BottomSheetDemo()),
           ListItem(title: 'AlertDialog', page: AlertDialogDemo()),
           ListItem(title: 'SimpleDialog', page: SimpleDialogDemo()),
           ListItem(title: 'DateTime', page: DateTimeDemo()),
