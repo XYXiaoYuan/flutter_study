@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_study/demo/form_demo.dart';
+import 'package:flutter_study/demo/paginated_data_table_demo.dart';
 import 'package:flutter_study/demo/popup_menu_button_demo.dart';
 import 'package:flutter_study/demo/simple_dialog_demo.dart';
 import 'package:flutter_study/demo/slider_demo.dart';
@@ -27,6 +28,7 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'PaginatedDataTable', page: PaginatedDataTableDemo()),
           ListItem(title: 'DataTable', page: DataTableDemo()),
           ListItem(title: 'Chip', page: ChipDemo()),
           ListItem(title: 'ExpansionPanel', page: ExpansionPanelDemo()),
