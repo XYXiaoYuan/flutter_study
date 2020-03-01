@@ -14,6 +14,7 @@ class _ChipDemoState extends State<ChipDemo> {
 
   String _action = 'Nothing';
   List<String> _selected = [];
+  String _choice = 'Lemon';
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class _ChipDemoState extends State<ChipDemo> {
           children: <Widget>[
             Wrap(
               spacing: 8.0,
-              runSpacing: 8.0,
+              runSpacing: 2.0,
               children: <Widget>[
                 Chip(
                   label: Text('Life'),
@@ -133,6 +134,30 @@ class _ChipDemoState extends State<ChipDemo> {
                     );
                   }).toList(),
                 ),
+                Divider(
+                  color: Colors.grey,
+                  height: 32.0,
+                  indent: 10,
+                ),
+                Container(
+                  width: double.infinity,
+                  child: Text('ChoiceChip: $_choice'),
+                ),
+                Wrap(
+                  spacing: 0.0,
+                  children: _tags.map((tag) {
+                    return ChoiceChip(
+                      label: Text(tag),
+                      selectedColor: Colors.black,
+                      selected: _choice == tag,
+                      onSelected: (value) {
+                        setState(() {
+                          _choice = tag;
+                        });
+                      },
+                    );
+                  }).toList(),
+                ),
               ],
             )
           ],
@@ -149,6 +174,8 @@ class _ChipDemoState extends State<ChipDemo> {
             ];
 
             _selected = [];
+
+            _choice = 'Lemon';
           });
         },
       )
