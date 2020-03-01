@@ -45,6 +45,23 @@ class _ChipDemoState extends State<ChipDemo> {
                     ),
                   ),
                 ),
+                Chip(
+                  label: Text('City'),
+                  onDeleted: () {},
+                  deleteIcon: Icon(Icons.delete),
+                  deleteIconColor: Colors.redAccent,
+                  deleteButtonTooltipMessage: 'Remove this tag',
+                  avatar: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      'https://resources.ninghao.net/images/wanghao.jpg'
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  height: 32.0,
+                  indent: 10,
+                ),
               ],
             )
           ],
