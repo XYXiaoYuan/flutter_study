@@ -12,6 +12,7 @@ import 'package:flutter_study/demo/util/tab_navigator.dart';
 import 'alert_dialog_demo.dart';
 import 'bottom_sheet_demo.dart';
 import 'button_demo.dart';
+import 'card_demo.dart';
 import 'chip_demo.dart';
 import 'data_table_demo.dart';
 import 'datetime_demo.dart';
@@ -28,6 +29,7 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'Card', page: CardDemo()),
           ListItem(title: 'PaginatedDataTable', page: PaginatedDataTableDemo()),
           ListItem(title: 'DataTable', page: DataTableDemo()),
           ListItem(title: 'Chip', page: ChipDemo()),
