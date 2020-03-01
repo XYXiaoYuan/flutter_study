@@ -4,6 +4,7 @@ import 'package:flutter_study/demo/form_demo.dart';
 import 'package:flutter_study/demo/popup_menu_button_demo.dart';
 import 'package:flutter_study/demo/simple_dialog_demo.dart';
 import 'package:flutter_study/demo/slider_demo.dart';
+import 'package:flutter_study/demo/snack_bar_demo.dart';
 import 'package:flutter_study/demo/switch_demo.dart';
 import 'package:flutter_study/demo/util/tab_navigator.dart';
 
@@ -23,6 +24,7 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'SnackBar', page: SnackBarDemo()),
           ListItem(title: 'BottomSheet', page: BottomSheetDemo()),
           ListItem(title: 'AlertDialog', page: AlertDialogDemo()),
           ListItem(title: 'SimpleDialog', page: SimpleDialogDemo()),
