@@ -81,7 +81,7 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
                       return Container(
                         padding: EdgeInsets.all(16.0),
                         child: Text(
-                          'Panel A',
+                          item.headerText,
                           style: Theme.of(context).textTheme.title,
                         )
                       );
