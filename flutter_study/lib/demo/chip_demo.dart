@@ -12,6 +12,8 @@ class _ChipDemoState extends State<ChipDemo> {
     'Lemon',
   ];
 
+  String _action = 'Nothing';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +78,28 @@ class _ChipDemoState extends State<ChipDemo> {
                       onDeleted: () {
                         setState(() {
                           _tags.remove(tag);
+                        });
+                      },
+                    );
+                  }).toList(),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  height: 32.0,
+                  indent: 10,
+                ),
+                Container(
+                  width: double.infinity,
+                  child: Text('ActionChip: $_action'),
+                ),
+                Wrap(
+                  spacing: 8.0,
+                  children: _tags.map((tag) {
+                    return ActionChip(
+                      label: Text(tag),
+                      onPressed: () {
+                        setState(() {
+                          _action = tag;
                         });
                       },
                     );
