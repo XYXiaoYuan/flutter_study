@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study/model/post.dart';
-import 'package:flutter_study/model/post.dart';
 
 class DataTableDemo extends StatefulWidget {
   @override
@@ -11,12 +10,26 @@ class _DataTableDemoState extends State<DataTableDemo> {
   int _sortColumnIndex;
   bool _sortAscending = true;
 
+  void _invertSelect () {
+    setState(() {
+      posts.map((post) {
+        post.selected = !post.selected;
+      }).toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('DataTableDemo'),
         elevation: 0.0,
+        actions: <Widget>[
+          FlatButton(
+            child: Text('反选'),
+            onPressed: _invertSelect
+          ) ,
+        ]
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
@@ -25,6 +38,14 @@ class _DataTableDemoState extends State<DataTableDemo> {
             DataTable(
               sortColumnIndex: _sortColumnIndex,
               sortAscending: _sortAscending,
+              onSelectAll: (bool value) {
+                setState(() {
+                  posts.map((post){
+                    post.selected = value;
+                  }).toList();
+                });
+              },
+              
               columns: [
                 DataColumn(
                   label: Text('Title'),
@@ -54,6 +75,14 @@ class _DataTableDemoState extends State<DataTableDemo> {
               ],
               rows: posts.map((post) {
                 return DataRow(
+                  selected: post.selected,
+                  onSelectChanged: (bool value) {
+                    setState(() {
+                      if (post.selected != value) {
+                        post.selected = value;
+                      }
+                    });
+                  },
                   cells: [
                     DataCell(Text(post.title)),
                     DataCell(Text(post.author)),
