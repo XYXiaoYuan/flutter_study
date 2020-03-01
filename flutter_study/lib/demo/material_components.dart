@@ -7,6 +7,7 @@ import 'package:flutter_study/demo/switch_demo.dart';
 import 'package:flutter_study/demo/util/tab_navigator.dart';
 
 import 'button_demo.dart';
+import 'datetime_demo.dart';
 import 'floating_action_demo.dart';
 
 class MaterialComponent extends StatelessWidget {
@@ -19,7 +20,8 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          ListItem(title: 'SliderDemo', page: SliderDemo()),
+          ListItem(title: 'DateTime', page: DateTimeDemo()),
+          ListItem(title: 'Slider', page: SliderDemo()),
           ListItem(title: 'Switch', page: SwitchDemo()),
           ListItem(title: 'Form', page: FormDemo()),
           ListItem(title: 'Button', page: ButtonDemo()),
