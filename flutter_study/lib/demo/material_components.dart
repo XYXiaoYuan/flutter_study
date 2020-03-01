@@ -12,6 +12,7 @@ import 'alert_dialog_demo.dart';
 import 'bottom_sheet_demo.dart';
 import 'button_demo.dart';
 import 'chip_demo.dart';
+import 'data_table_demo.dart';
 import 'datetime_demo.dart';
 import 'expansion_panel_demo.dart';
 import 'floating_action_demo.dart';
@@ -26,6 +27,7 @@ class MaterialComponent extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'DataTable', page: DataTableDemo()),
           ListItem(title: 'Chip', page: ChipDemo()),
           ListItem(title: 'ExpansionPanel', page: ExpansionPanelDemo()),
           ListItem(title: 'SnackBar', page: SnackBarDemo()),
