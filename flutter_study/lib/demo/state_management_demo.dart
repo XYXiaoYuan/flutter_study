@@ -21,12 +21,26 @@ class _StateManagermentDemoState extends State<StateManagermentDemo> {
         title: Text('StateManagermentDemo'),
         elevation: 0.0,
       ),
-      body: Counter(_count, _increaseCount),
+      body: CounterWrapper(_count, _increaseCount),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: _increaseCount,
       ),
     );;
+  }
+}
+
+class CounterWrapper extends StatelessWidget {
+  final int count;
+  final VoidCallback increaseCount;
+
+  CounterWrapper(this.count, this.increaseCount);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Counter(count, increaseCount)
+    );
   }
 }
 
@@ -38,11 +52,9 @@ class Counter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ActionChip(
-        label: Text('$count'),
-        onPressed: increaseCount,
-      ),
+    return ActionChip(
+      label: Text('$count'),
+      onPressed: increaseCount,
     );
   }
 }
