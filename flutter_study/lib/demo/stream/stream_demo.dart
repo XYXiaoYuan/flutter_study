@@ -27,9 +27,17 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     Stream<String> _streamDemo = Stream.fromFuture(fetchData());
 
     print('Start listening on a Stream');
-    _streamDemo.listen(onData);
+    _streamDemo.listen(onData, onError: onError, onDone: onDone);
 
     print('Initialize completed');
+  }
+
+  void onError(error) {
+    print('Error: $error ');
+  }
+
+  void onDone() {
+    print('Done!');
   }
 
   void onData(String data) {
