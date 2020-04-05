@@ -8,6 +8,7 @@ import 'demo/material_components.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/state_management_demo.dart';
+import 'demo/stream/stream_demo.dart';
 import 'demo/util/tab_navigator.dart';
 
 void main() => runApp(MyApp());
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: Home(),
-        initialRoute: '/',
+        initialRoute: '/stream',
         routes: {
           '/': (context) => Home(),
+          '/stream': (context) => StreamDemo()
         },
         theme: ThemeData(
           primaryColor: Colors.yellow,
