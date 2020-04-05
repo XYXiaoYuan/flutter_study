@@ -5,6 +5,7 @@ import 'demo/listview_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/material_components.dart';
+import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/state_management_demo.dart';
@@ -19,10 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: Home(),
-        initialRoute: '/stream',
+        initialRoute: '/rxdart',
         routes: {
           '/': (context) => Home(),
-          '/stream': (context) => StreamDemo()
+          '/rxdart': (context) => RxDartDemo()
         },
         theme: ThemeData(
           primaryColor: Colors.yellow,
