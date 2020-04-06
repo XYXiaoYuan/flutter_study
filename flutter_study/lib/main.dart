@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'demo/basic_demo.dart';
+import 'demo/bloc/bloc_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
@@ -20,10 +21,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: Home(),
-        initialRoute: '/rxdart',
+        initialRoute: '/bloc',
         routes: {
           '/': (context) => Home(),
-          '/rxdart': (context) => RxDartDemo()
+          '/bloc': (context) => BlocDemo()
         },
         theme: ThemeData(
           primaryColor: Colors.yellow,
