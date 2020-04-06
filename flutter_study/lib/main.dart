@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'demo/basic_demo.dart';
 import 'demo/bloc/bloc_demo.dart';
+import 'demo/http/http_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: Home(),
-        initialRoute: '/bloc',
+        initialRoute: '/http',
         routes: {
           '/': (context) => Home(),
-          '/bloc': (context) => BlocDemo()
+          '/http': (context) => HttpDemo()
         },
         theme: ThemeData(
           primaryColor: Colors.yellow,
