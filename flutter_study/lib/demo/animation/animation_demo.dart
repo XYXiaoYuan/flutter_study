@@ -23,6 +23,7 @@ with TickerProviderStateMixin {
   AnimationController _animationController;
   Animation animation;
   Animation animationColor;
+  CurvedAnimation curve;
 
   @override
   void initState() {
@@ -36,10 +37,12 @@ with TickerProviderStateMixin {
       vsync: this,
     );
 
+    curve = CurvedAnimation(parent: _animationController, curve: Curves.bounceOut);
+
     animation = Tween(
       begin: 32.0,
       end: 100.0,
-    ).animate(_animationController);
+    ).animate(curve);
 
     animationColor = ColorTween(
       begin: Colors.red,
