@@ -21,34 +21,66 @@ class AnimationDemoHome extends StatefulWidget {
 class _AnimationDemoHomeState extends State<AnimationDemoHome> 
 with TickerProviderStateMixin {
   AnimationController _animationController;
+  Animation animation;
+  Animation animationColor;
 
   @override
   void initState() {
     super.initState();
 
     _animationController = AnimationController(
-      duration: Duration(milliseconds: 1000),
+      // value: 32.0,
+      // lowerBound: 32.0,
+      // upperBound: 100.0,
+      duration: Duration(milliseconds: 3000),
       vsync: this,
     );
 
+    animation = Tween(
+      begin: 32.0,
+      end: 100.0,
+    ).animate(_animationController);
+
+    animationColor = ColorTween(
+      begin: Colors.red,
+      end: Colors.red[900]
+    ).animate(_animationController);
+
     _animationController.addListener(() {
-      print('${_animationController.value}');
+      // print('${_animationController.value}');
+      setState(() {});
     });
 
-    _animationController.forward();
+    _animationController.addStatusListener((AnimationStatus status) {
+      print(status);
+    });
+
+    // _animationController.forward();
   }
 
   @override
   void dispose() {
     super.dispose();
-
     _animationController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Center(
+      child: IconButton(
+        icon: Icon(Icons.favorite),
+        iconSize: animation.value,
+        color: animationColor.value,
+        onPressed: () {
+          switch (_animationController.status) {
+            case AnimationStatus.completed:
+              _animationController.reverse();
+              break;
+            default:
+              _animationController.forward();
+          }
+        },
+      )
     );
   }
 }
