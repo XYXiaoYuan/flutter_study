@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_study/demo/i18n/map/ninghao_demo_localizations.dart';
 import 'demo/animation/animation_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/bloc/bloc_demo.dart';
@@ -15,6 +16,8 @@ import 'demo/navigator_demo.dart';
 import 'demo/state_management_demo.dart';
 import 'demo/stream/stream_demo.dart';
 import 'demo/util/tab_navigator.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'demo/i18n/intl/ninghao_demo_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,19 +25,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        // home: Home(),
-        initialRoute: '/i18n',
-        routes: {
-          '/': (context) => Home(),
-          '/i18n': (context) => I18nDemo()
-        },
-        theme: ThemeData(
-          primaryColor: Colors.yellow,
-          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-          splashColor: Colors.white70,
-          accentColor: Color.fromRGBO(3, 54, 255, 1.0),
-        ));
+      // locale: Locale('en', 'US'),
+      locale: Locale('zh', 'CN'),
+      localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
+        return Locale('en', 'US');
+      },
+      localizationsDelegates: [
+        NinghaoDemoLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', 'US'),
+        Locale('zh', 'CN'),
+      ],
+      debugShowCheckedModeBanner: false,
+      // home: Home(),
+      initialRoute: '/i18n',
+      routes: {
+        '/': (context) => Home(),
+        '/i18n': (context) => I18nDemo()
+      },
+      theme: ThemeData(
+        primaryColor: Colors.yellow,
+        highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+        splashColor: Colors.white70,
+        accentColor: Color.fromRGBO(3, 54, 255, 1.0),
+      )
+    );
   }
 }
 
