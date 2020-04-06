@@ -49,10 +49,10 @@ with TickerProviderStateMixin {
       end: Colors.red[900]
     ).animate(_animationController);
 
-    _animationController.addListener(() {
-      // print('${_animationController.value}');
-      setState(() {});
-    });
+    // _animationController.addListener(() {
+    //   // print('${_animationController.value}');
+    //   setState(() {});
+    // });
 
     _animationController.addStatusListener((AnimationStatus status) {
       print(status);
@@ -70,20 +70,38 @@ with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: IconButton(
-        icon: Icon(Icons.favorite),
-        iconSize: animation.value,
-        color: animationColor.value,
-        onPressed: () {
-          switch (_animationController.status) {
-            case AnimationStatus.completed:
-              _animationController.reverse();
-              break;
-            default:
-              _animationController.forward();
-          }
-        },
+      child: AnimatedHeart(
+        animations: [animation, animationColor], 
+        controller: _animationController
       )
     );
+  }
+}
+
+class AnimatedHeart extends AnimatedWidget {
+  final List animations;
+  final AnimationController controller;
+
+  AnimatedHeart({
+    this.animations,
+    this.controller
+  }) : super(listenable: controller);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+        icon: Icon(Icons.favorite),
+        iconSize: animations.first.value,
+        color: animations.last.value,
+        onPressed: () {
+          switch (controller.status) {
+            case AnimationStatus.completed:
+              controller.reverse();
+              break;
+            default:
+              controller.forward();
+          }
+        },
+      );
   }
 }
