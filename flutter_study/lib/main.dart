@@ -15,6 +15,7 @@ import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/state_management_demo.dart';
 import 'demo/stream/stream_demo.dart';
+import 'demo/test/test_demo.dart';
 import 'demo/util/tab_navigator.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'demo/i18n/intl/ninghao_demo_localizations.dart';
@@ -41,10 +42,10 @@ class MyApp extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       // home: Home(),
-      initialRoute: '/i18n',
+      initialRoute: '/test',
       routes: {
         '/': (context) => Home(),
-        '/i18n': (context) => I18nDemo()
+        '/test': (context) => TestDemo()
       },
       theme: ThemeData(
         primaryColor: Colors.yellow,
