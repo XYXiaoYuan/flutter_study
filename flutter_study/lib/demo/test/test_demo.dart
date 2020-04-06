@@ -8,9 +8,35 @@ class TestDemo extends StatelessWidget {
         title: Text('TestDemo'),
         elevation: 0.0
       ),
-      body: Container(
+      body: TestDemoHome(),
+    );
+  }
+}
 
-      ),
+class TestDemoHome extends StatefulWidget {
+  @override
+  _TestDemoHomeState createState() => _TestDemoHomeState();
+}
+
+class _TestDemoHomeState extends State<TestDemoHome> {
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Chip(
+          label: Text('hello'),
+        ),
+        ActionChip(
+          label: Text('$_count'), 
+          onPressed: () {
+            setState(() {
+              _count += 1;
+            });
+          },
+        )
+      ],
     );
   }
 }
