@@ -9,8 +9,14 @@ class TestDemo extends StatelessWidget {
         elevation: 0.0
       ),
       body: Container(
-        
+
       ),
     );
+  }
+}
+
+class NinghaoTestDemo {
+  static greet(String name) {
+    return 'hello $name';
   }
 }
