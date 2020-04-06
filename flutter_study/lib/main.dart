@@ -63,32 +63,7 @@ class Home extends StatelessWidget {
     return DefaultTabController(
         length: 4,
         child: Scaffold(
-          appBar: AppBar(
-            title: Text('NINGHAO'),
-            actions: <Widget>[
-              _IconButton(
-                  icon: Icon(Icons.input),
-                  tooltip: 'About',
-                  page: Page(title: 'About')),
-              _IconButton(
-                  icon: Icon(Icons.search),
-                  tooltip: 'Search',
-                  page: MaterialComponent()),
-            ],
-            elevation: 0.0,
-            bottom: TabBar(
-              unselectedLabelColor: Colors.black38,
-              indicatorColor: Colors.black54,
-              indicatorSize: TabBarIndicatorSize.label,
-              indicatorWeight: 1.0,
-              tabs: <Widget>[
-                Tab(icon: Icon(Icons.local_florist)),
-                Tab(icon: Icon(Icons.change_history)),
-                Tab(icon: Icon(Icons.directions_bike)),
-                Tab(icon: Icon(Icons.view_quilt)),
-              ],
-            ),
-          ),
+          appBar: _MainAppBar(context),
           backgroundColor: Colors.grey[100],
           body: TabBarView(children: <Widget>[
             ListViewDemo(),
@@ -100,6 +75,35 @@ class Home extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBarDemo(),
         ));
   }
+}
+
+class _MainAppBar extends AppBar {
+  _MainAppBar(BuildContext context): super (
+      title: Text('NINGHAO'),
+      actions: <Widget>[
+        _IconButton(
+            icon: Icon(Icons.input),
+            tooltip: 'About',
+            page: Page(title: 'About')),
+        _IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Search',
+            page: MaterialComponent()),
+      ],
+      elevation: 0.0,
+      bottom: TabBar(
+        unselectedLabelColor: Colors.black38,
+        indicatorColor: Colors.black54,
+        indicatorSize: TabBarIndicatorSize.label,
+        indicatorWeight: 1.0,
+        tabs: <Widget>[
+          Tab(icon: Icon(Icons.local_florist)),
+          Tab(icon: Icon(Icons.change_history)),
+          Tab(icon: Icon(Icons.directions_bike)),
+          Tab(icon: Icon(Icons.view_quilt)),
+        ],
+      ),
+  );
 }
 
 class _IconButton extends StatelessWidget {
