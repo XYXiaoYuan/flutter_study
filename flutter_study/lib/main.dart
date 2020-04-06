@@ -42,10 +42,10 @@ class MyApp extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       // home: Home(),
-      initialRoute: '/test',
+      initialRoute: '/',
       routes: {
         '/': (context) => Home(),
-        '/test': (context) => TestDemo()
+        // '/test': (context) => TestDemo()
       },
       theme: ThemeData(
         primaryColor: Colors.yellow,
