@@ -90,18 +90,18 @@ class AnimatedHeart extends AnimatedWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        icon: Icon(Icons.favorite),
-        iconSize: animations.first.value,
-        color: animations.last.value,
-        onPressed: () {
-          switch (controller.status) {
-            case AnimationStatus.completed:
-              controller.reverse();
-              break;
-            default:
-              controller.forward();
-          }
-        },
-      );
+      icon: Icon(Icons.favorite),
+      iconSize: animations.first.value,
+      color: animations.last.value,
+      onPressed: () {
+        switch (controller.status) {
+          case AnimationStatus.completed:
+            controller.reverse();
+            break;
+          default:
+            controller.forward();
+        }
+      },
+    );
   }
 }

@@ -101,10 +101,11 @@ class SliverGridDemo extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
           return Container(
-              child: Image.network(
-            posts[index].imageUrl,
-            fit: BoxFit.cover,
-          ));
+            child: Image.network(
+              posts[index].imageUrl,
+              fit: BoxFit.cover,
+            )
+          );
         },
         childCount: posts.length,
       ),

@@ -1,13 +1,41 @@
 {
-  // 使用 IntelliSense 了解相关属性。 
-  // 悬停以查看现有属性的描述。
-  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Study",
+      "name": "Current Deivce",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "deviceId": "5F697830-D03F-4350-9376-B2CBC83A9B46"
+    },
+    {
+      "name": "4Inch",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "EA472B07-74E4-4EB0-91F7-9D4CEEB11E02"
+    },
+    {
+      "name": "47Inch",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "5F697830-D03F-4350-9376-B2CBC83A9B46"
+    },
+    {
+      "name": "55Inch",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "7C83383E-734A-4470-9FFD-0F524B0949D3"
+    },
+    {
+      "name": "58Inch",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "75CFEE5F-5093-47C1-BBC3-741B6E2AC365"
     }
-  ]
+  ],
+  "compounds": [
+		{
+			"name": "All Devices",
+			"configurations": ["4Inch", "47Inch", "55Inch", "58Inch"],
+		}
+	]
 }

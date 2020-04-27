@@ -51,11 +51,12 @@ class GridViewExtentDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.extent(
-        maxCrossAxisExtent: 150.0,
-        crossAxisSpacing: 16.0,
-        mainAxisSpacing: 16.0,
-        scrollDirection: Axis.vertical,
-        children: _buildTiles(100));
+      maxCrossAxisExtent: 150.0,
+      crossAxisSpacing: 16.0,
+      mainAxisSpacing: 16.0,
+      scrollDirection: Axis.vertical,
+      children: _buildTiles(100)
+    );
   }
 }
 
@@ -76,11 +77,12 @@ class GridViewCountDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-        crossAxisCount: 3,
-        crossAxisSpacing: 16.0,
-        mainAxisSpacing: 16.0,
-        scrollDirection: Axis.vertical,
-        children: _buildTiles(100));
+      crossAxisCount: 3,
+      crossAxisSpacing: 16.0,
+      mainAxisSpacing: 16.0,
+      scrollDirection: Axis.vertical,
+      children: _buildTiles(100)
+    );
   }
 }
 

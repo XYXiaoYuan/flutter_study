@@ -81,16 +81,22 @@ class Home extends StatelessWidget {
 class _MainAppBar extends AppBar {
   _MainAppBar(BuildContext context): super (
     title: Text('NINGHAO'),
+    leading: IconButton(
+      icon: Icon(Icons.menu),
+      onPressed: () {
+        Scaffold.of(context).openDrawer();
+      },
+    ),
     actions: <Widget>[
       _IconButton(
-          icon: Icon(Icons.input),
-          tooltip: 'About',
-          page: Page(title: 'About')
+        icon: Icon(Icons.input),
+        tooltip: 'About',
+        page: Page(title: 'About')
       ),
       _IconButton(
-          icon: Icon(Icons.search),
-          tooltip: 'Search',
-          page: MaterialComponent()
+        icon: Icon(Icons.search),
+        tooltip: 'Search',
+        page: MaterialComponent()
       ),
     ],
     elevation: 0.0,
@@ -121,6 +127,7 @@ class _IconButton extends StatelessWidget {
     return IconButton(
       icon: icon,
       tooltip: tooltip,
-      onPressed: () => {NavigatorUtil.push(context, page)});
+      onPressed: () => NavigatorUtil.push(context, page)
+    );
   }
 }
