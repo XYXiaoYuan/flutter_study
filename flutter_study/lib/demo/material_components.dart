@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_study/demo/dropdown_button_demo.dart';
 import 'package:flutter_study/demo/form_demo.dart';
 import 'package:flutter_study/demo/paginated_data_table_demo.dart';
 import 'package:flutter_study/demo/popup_menu_button_demo.dart';
@@ -50,6 +51,7 @@ class MaterialComponent extends StatelessWidget {
           ListItem(title: 'Button', page: ButtonDemo()),
           ListItem(title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
           ListItem(title: 'PopupMenuButton', page: PopupMenuButtonDemo()),
+          ListItem(title: 'DropdownButton', page: DropDownButtonDemo())
         ],
       )
     );

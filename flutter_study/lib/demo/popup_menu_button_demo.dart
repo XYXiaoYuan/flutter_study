@@ -31,6 +31,10 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
                       _currentMenuItem = value;
                     });
                   },
+                  onCanceled: () {
+                    print('onCanceled');
+                  },
+                  tooltip: 'PopupMenuButton',
                   itemBuilder: (BuildContext context) => [
                     PopupMenuItem(
                       value: 'Home',
