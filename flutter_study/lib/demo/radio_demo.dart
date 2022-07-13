@@ -8,19 +8,16 @@ class RadioDemo extends StatefulWidget {
 class _RadioDemoState extends State<RadioDemo> {
   int _radioGroupA = 0;
 
-  void _handleRadioValueChanged(int value) {
+  void _handleRadioValueChanged(int? value) {
     setState(() {
-      _radioGroupA = value;
+      _radioGroupA = value ?? 0;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('RadioDemo'),
-        elevation: 0.0
-      ),
+      appBar: AppBar(title: Text('RadioDemo'), elevation: 0.0),
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -46,19 +43,19 @@ class _RadioDemoState extends State<RadioDemo> {
               secondary: Icon(Icons.filter_2),
               selected: _radioGroupA == 1,
             ),
-          ], 
+          ],
           // children: <Widget>[
           //   Row(
           //     mainAxisAlignment: MainAxisAlignment.center,
           //     children: <Widget>[
           //       // Radio(
-          //       //   value: 0, 
-          //       //   groupValue: _radioGroupA, 
+          //       //   value: 0,
+          //       //   groupValue: _radioGroupA,
           //       //   onChanged: _handleRadioValueChanged
           //       // ),
           //       // Radio(
-          //       //   value: 1, 
-          //       //   groupValue: _radioGroupA, 
+          //       //   value: 1,
+          //       //   groupValue: _radioGroupA,
           //       //   onChanged: _handleRadioValueChanged
           //       // ),
           //     ],
@@ -69,4 +66,3 @@ class _RadioDemoState extends State<RadioDemo> {
     );
   }
 }
-

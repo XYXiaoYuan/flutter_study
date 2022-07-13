@@ -11,18 +11,15 @@ class _CheckBoxDemoState extends State<CheckBoxDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title :Text('CheckBoxDemo'),
-        elevation: 0.0
-      ),
+      appBar: AppBar(title: Text('CheckBoxDemo'), elevation: 0.0),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CheckboxListTile(
-            value: _checkboxItemA, 
+            value: _checkboxItemA,
             onChanged: (value) {
               setState(() {
-                _checkboxItemA = value;
+                _checkboxItemA = value ?? false;
               });
             },
             title: Text('Checkbox Item B'),
@@ -34,7 +31,7 @@ class _CheckBoxDemoState extends State<CheckBoxDemo> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               // Checkbox(
-              //   value: _checkboxItemA, 
+              //   value: _checkboxItemA,
               //   onChanged: (value) {
               //     setState(() {
               //       _checkboxItemA = value;
@@ -49,4 +46,3 @@ class _CheckBoxDemoState extends State<CheckBoxDemo> {
     );
   }
 }
-

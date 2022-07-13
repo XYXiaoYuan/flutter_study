@@ -4,7 +4,7 @@ import 'package:flutter_study/model/post.dart';
 class PostShow extends StatelessWidget {
   final Post post;
   PostShow({
-    this.post,
+    required this.post,
   });
 
   @override
@@ -23,12 +23,13 @@ class PostShow extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('${post.title}', style: Theme.of(context).textTheme.title),
+                Text('${post.title}',
+                    style: Theme.of(context).textTheme.headline1),
                 Text('${post.author}',
-                    style: Theme.of(context).textTheme.subhead),
+                    style: Theme.of(context).textTheme.headline2),
                 SizedBox(height: 10.0),
                 Text('${post.description}',
-                    style: Theme.of(context).textTheme.body1)
+                    style: Theme.of(context).textTheme.headline3)
               ],
             ),
           )

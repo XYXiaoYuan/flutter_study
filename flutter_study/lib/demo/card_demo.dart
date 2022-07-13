@@ -40,24 +40,18 @@ class _CardDemoState extends State<CardDemo> {
                   ),
                   Container(
                     padding: EdgeInsets.all(16.0),
-                    child: Text(post.description, maxLines: 2, overflow: TextOverflow.ellipsis),
+                    child: Text(post.description,
+                        maxLines: 2, overflow: TextOverflow.ellipsis),
                   ),
-                  ButtonTheme.bar(
-                    child: ButtonBar(
-                      children: <Widget>[
-                        FlatButton(
-                          onPressed: () {}, 
-                          child: Text('Like'.toUpperCase()
-                          )
-                        ),
-                        FlatButton(
-                          onPressed: () {}, 
-                          child: Text('Read'.toUpperCase()
-                          )
-                        ),
-                      ],
-                    )
-                  )
+                  ButtonTheme(
+                      child: ButtonBar(
+                    children: <Widget>[
+                      FlatButton(
+                          onPressed: () {}, child: Text('Like'.toUpperCase())),
+                      FlatButton(
+                          onPressed: () {}, child: Text('Read'.toUpperCase())),
+                    ],
+                  ))
                 ],
               ),
             );

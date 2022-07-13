@@ -9,14 +9,11 @@ class PostDataSource extends DataTableSource {
   DataRow getRow(int index) {
     final Post post = _posts[index];
 
-    return DataRow.byIndex(
-      index: index,
-      cells: <DataCell>[
-        DataCell(Text(post.title)),
-        DataCell(Text(post.author)),
-        DataCell(Image.network(post.imageUrl)),
-      ]
-    );
+    return DataRow.byIndex(index: index, cells: <DataCell>[
+      DataCell(Text(post.title)),
+      DataCell(Text(post.author)),
+      DataCell(Image.network(post.imageUrl)),
+    ]);
   }
 
   @override
@@ -52,9 +49,9 @@ class PaginatedDataTableDemo extends StatefulWidget {
 }
 
 class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
-  int _sortColumnIndex;
+  late int _sortColumnIndex;
   bool _sortAscending = true;
-  final PostDataSource _postsDataSource =  PostDataSource();
+  final PostDataSource _postsDataSource = PostDataSource();
 
   @override
   Widget build(BuildContext context) {
@@ -75,21 +72,17 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
               sortAscending: _sortAscending,
               columns: [
                 DataColumn(
-                  label: Text('Title'),
-                  onSort: (int columnIndex, bool ascending) {
-                    _postsDataSource._sort((post) => post.title.length, ascending);
-                    setState(() {
-                      _sortColumnIndex = columnIndex;
-                      _sortAscending = ascending;
+                    label: Text('Title'),
+                    onSort: (int columnIndex, bool ascending) {
+                      _postsDataSource._sort(
+                          (post) => post.title.length, ascending);
+                      setState(() {
+                        _sortColumnIndex = columnIndex;
+                        _sortAscending = ascending;
                       });
-                    }
-                ),
-                DataColumn(
-                  label: Text('Author')
-                ),
-                DataColumn(
-                  label: Text('Image')
-                ),
+                    }),
+                DataColumn(label: Text('Author')),
+                DataColumn(label: Text('Image')),
               ],
             ),
           ],

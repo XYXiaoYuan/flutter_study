@@ -9,9 +9,8 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
   final _bottomSheetScaffoldKey = GlobalKey<ScaffoldState>();
 
   _openBottomSheet() {
-    _bottomSheetScaffoldKey
-    .currentState
-    .showBottomSheet((BuildContext context){
+    _bottomSheetScaffoldKey.currentState!
+        .showBottomSheet((BuildContext context) {
       return BottomAppBar(
         child: Container(
           height: 90.0,
@@ -23,11 +22,10 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
               SizedBox(width: 16.0),
               Text('01:30 / 03:30'),
               Expanded(
-                child: Text(
-                  'Fix you - Coldplay',
-                  textAlign: TextAlign.right,
-                )
-              ),
+                  child: Text(
+                'Fix you - Coldplay',
+                textAlign: TextAlign.right,
+              )),
             ],
           ),
         ),
@@ -36,36 +34,32 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
   }
 
   Future<void> _openModalSheet() async {
-   final option = await showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          height: 200.0,
-          child: Column(
-            children: <Widget>[
-              ListTile(
-                title: Text('Option A'),
-                onTap: () {
-                  Navigator.pop(context, 'A');
-                },
-              ),
-              ListTile(
-                title: Text('Option B'),
-                onTap: () {
-                  Navigator.pop(context, 'B');
-                },
-              ),
-              ListTile(
-                title: Text('Option C'),
-                onTap: () {
-                  Navigator.pop(context, 'C');
-                },
-              ),
-            ]
-          )
-        );
-      }
-    );
+    final option = await showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+              height: 200.0,
+              child: Column(children: <Widget>[
+                ListTile(
+                  title: Text('Option A'),
+                  onTap: () {
+                    Navigator.pop(context, 'A');
+                  },
+                ),
+                ListTile(
+                  title: Text('Option B'),
+                  onTap: () {
+                    Navigator.pop(context, 'B');
+                  },
+                ),
+                ListTile(
+                  title: Text('Option C'),
+                  onTap: () {
+                    Navigator.pop(context, 'C');
+                  },
+                ),
+              ]));
+        });
 
     print(option);
   }
@@ -79,28 +73,27 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
         elevation: 0.0,
       ),
       body: Container(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            // Text('Your choice is: $_choice'),
-            SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                FlatButton(
-                  child: Text('Open BottomSheet'),
-                  onPressed: _openBottomSheet,
-                ),
-                FlatButton(
-                  child: Text('Open ModalSheet'),
-                  onPressed: _openModalSheet,
-                ),
-              ],
-            )
-          ],
-        )
-      ),
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Text('Your choice is: $_choice'),
+              SizedBox(height: 16.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  TextButton(
+                    child: Text('Open BottomSheet'),
+                    onPressed: _openBottomSheet,
+                  ),
+                  TextButton(
+                    child: Text('Open ModalSheet'),
+                    onPressed: _openModalSheet,
+                  ),
+                ],
+              )
+            ],
+          )),
     );
   }
 }

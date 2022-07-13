@@ -11,10 +11,7 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('PopupMenuButton'),
-        elevation: 0.0
-      ),
+      appBar: AppBar(title: Text('PopupMenuButton'), elevation: 0.0),
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -25,31 +22,30 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
               children: <Widget>[
                 Text(_currentMenuItem),
                 PopupMenuButton(
-                  onSelected: (value) {
-                    print(value);
-                    setState(() {
-                      _currentMenuItem = value;
-                    });
-                  },
-                  onCanceled: () {
-                    print('onCanceled');
-                  },
-                  tooltip: 'PopupMenuButton',
-                  itemBuilder: (BuildContext context) => [
-                    PopupMenuItem(
-                      value: 'Home',
-                      child: Text('Home'),
-                    ),
-                    PopupMenuItem(
-                      value: 'Discovery',
-                      child: Text('Discovery'),
-                    ),
-                    PopupMenuItem(
-                      value: 'Communnity',
-                      child: Text('Communnity'),
-                    ),
-                  ]
-                ),
+                    onSelected: (value) {
+                      print(value);
+                      setState(() {
+                        // _currentMenuItem = value;
+                      });
+                    },
+                    onCanceled: () {
+                      print('onCanceled');
+                    },
+                    tooltip: 'PopupMenuButton',
+                    itemBuilder: (BuildContext context) => [
+                          PopupMenuItem(
+                            value: 'Home',
+                            child: Text('Home'),
+                          ),
+                          PopupMenuItem(
+                            value: 'Discovery',
+                            child: Text('Discovery'),
+                          ),
+                          PopupMenuItem(
+                            value: 'Communnity',
+                            child: Text('Communnity'),
+                          ),
+                        ]),
               ],
             )
           ],

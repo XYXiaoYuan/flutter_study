@@ -11,10 +11,7 @@ class _DropDownButtonDemoState extends State<DropDownButtonDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('PopupMenuButton'),
-        elevation: 0.0
-      ),
+      appBar: AppBar(title: Text('PopupMenuButton'), elevation: 0.0),
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -24,20 +21,19 @@ class _DropDownButtonDemoState extends State<DropDownButtonDemo> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 DropdownButton(
-                  icon: Icon(Icons.add),
-                  iconEnabledColor: Colors.red,
-                  value: _dropValue,
-                  items: [
-                    DropdownMenuItem(child: Text('语文'), value: '语文'),
-                    DropdownMenuItem(child: Text('数学'), value: '数学'),
-                    DropdownMenuItem(child: Text('英语'), value: '英语')
-                  ], 
-                  onChanged: (value) {
-                    setState(() {
-                      _dropValue = value;
-                    });
-                  }
-                )
+                    icon: Icon(Icons.add),
+                    iconEnabledColor: Colors.red,
+                    value: _dropValue,
+                    items: [
+                      DropdownMenuItem(child: Text('语文'), value: '语文'),
+                      DropdownMenuItem(child: Text('数学'), value: '数学'),
+                      DropdownMenuItem(child: Text('英语'), value: '英语')
+                    ],
+                    onChanged: (value) {
+                      setState(() {
+                        // _dropValue = value;
+                      });
+                    })
               ],
             )
           ],

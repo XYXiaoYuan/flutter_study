@@ -1,9 +1,9 @@
 class Post {
   Post({
-    this.title,
-    this.author,
-    this.imageUrl,
-    this.description,
+    required this.title,
+    required this.author,
+    required this.imageUrl,
+    required this.description,
   });
 
   final String title;

@@ -12,20 +12,20 @@ void main() {
       driver = await FlutterDriver.connect();
     });
 
-    tearDownAll(() {
-      if (driver != null) {
-        driver.close();
-      }
-    });
-    
-    test('starts at 0', () async {
-      expect(await driver.getText(actionChipLabelText), '0');
-    });
+    // tearDownAll(() {
+    //   if (driver != null) {
+    //     driver.close();
+    //   }
+    // });
 
-    test('increments the counter', () async {
-      await driver.tap(actionChip);
+    // test('starts at 0', () async {
+    //   expect(await driver.getText(actionChipLabelText), '0');
+    // });
 
-      expect(await driver.getText(actionChipLabelText), '1');
-    });
+    // test('increments the counter', () async {
+    //   await driver.tap(actionChip);
+
+    //   expect(await driver.getText(actionChipLabelText), '1');
+    // });
   });
 }

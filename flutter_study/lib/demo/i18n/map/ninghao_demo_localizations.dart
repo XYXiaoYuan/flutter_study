@@ -5,12 +5,12 @@ class NinghaoDemoLocalizations {
   final Locale locale;
   NinghaoDemoLocalizations(this.locale);
 
-  static NinghaoDemoLocalizations of(BuildContext context) {
-    return Localizations.of<NinghaoDemoLocalizations>(
-      context, 
-      NinghaoDemoLocalizations
-    );
-  }
+  // static NinghaoDemoLocalizations of(BuildContext context) {
+  //   return Localizations.of<NinghaoDemoLocalizations>(
+  //     context,
+  //     NinghaoDemoLocalizations
+  //   );
+  // }
 
   static Map<String, Map<String, String>> _localized = {
     'en': {
@@ -21,8 +21,8 @@ class NinghaoDemoLocalizations {
     }
   };
 
-  String get title {
-    return _localized[locale.languageCode]['title'];
+  String? get title {
+    return _localized[locale.languageCode]!['title'];
   }
 }
 

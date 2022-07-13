@@ -6,10 +6,7 @@ class StreamDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('StreamDemo'),
-        elevation: 0.0
-      ),
+      appBar: AppBar(title: Text('StreamDemo'), elevation: 0.0),
       body: StreamDemoHome(),
     );
   }
@@ -21,9 +18,9 @@ class StreamDemoHome extends StatefulWidget {
 }
 
 class _StreamDemoHomeState extends State<StreamDemoHome> {
-  StreamSubscription _streamDemoSubscription;
-  StreamController<String> _streamDemo;
-  StreamSink _sinkDemo;
+  late StreamSubscription _streamDemoSubscription;
+  late StreamController<String> _streamDemo;
+  late StreamSink _sinkDemo;
   String _data = '...';
 
   @override
@@ -39,11 +36,11 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     print('Create a Stream');
     // Stream<String> _streamDemo = Stream.fromFuture(fetchData());
     _streamDemo = StreamController.broadcast();
-    _sinkDemo= _streamDemo.sink;
+    _sinkDemo = _streamDemo.sink;
 
     print('Start listening on a Stream');
-    _streamDemoSubscription = 
-    _streamDemo.stream.listen(onData, onError: onError, onDone: onDone);
+    _streamDemoSubscription =
+        _streamDemo.stream.listen(onData, onError: onError, onDone: onDone);
     _streamDemo.stream.listen(onDataTwo, onError: onError, onDone: onDone);
 
     print('Initialize completed');
@@ -83,7 +80,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     _streamDemoSubscription.cancel();
   }
 
-  Future<String> _addDataToStream() async {
+  Future<String?> _addDataToStream() async {
     print('Add data to strem');
 
     String data = await fetchData();
@@ -99,42 +96,37 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            // Text('$_data'),
-            StreamBuilder(
+        child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Text('$_data'),
+          StreamBuilder(
               stream: _streamDemo.stream,
               initialData: '...',
               builder: (context, snapshot) {
                 return Text('${snapshot.data}');
-              }
+              }),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+            TextButton(
+              child: Text('Add'),
+              onPressed: _addDataToStream,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                FlatButton(
-                  child: Text('Add'),
-                  onPressed: _addDataToStream,
-                ),
-                FlatButton(
-                  child: Text('Pause'),
-                  onPressed: _pauseStream,
-                ),
-                FlatButton(
-                  child: Text('Resume'),
-                  onPressed: _resumeStream,
-                ),
-                FlatButton(
-                  child: Text('Cancel'),
-                  onPressed: _cancelStream,
-                ),
-              ]
+            TextButton(
+              child: Text('Pause'),
+              onPressed: _pauseStream,
             ),
-          ],
-        ),
-      )
-    );
+            TextButton(
+              child: Text('Resume'),
+              onPressed: _resumeStream,
+            ),
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: _cancelStream,
+            ),
+          ]),
+        ],
+      ),
+    ));
   }
 }

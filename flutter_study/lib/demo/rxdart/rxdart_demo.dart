@@ -6,14 +6,10 @@ class RxDartDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('RxDartDemo'),
-        elevation: 0.0
-      ),
-      body: Center(
-        child: RxDartDemoHome(),
-      )
-    );
+        appBar: AppBar(title: Text('RxDartDemo'), elevation: 0.0),
+        body: Center(
+          child: RxDartDemoHome(),
+        ));
   }
 }
 
@@ -23,7 +19,7 @@ class RxDartDemoHome extends StatefulWidget {
 }
 
 class _RxDartDemoHomeState extends State<RxDartDemoHome> {
-  PublishSubject<String> _textFieldSubject;
+  late PublishSubject<String> _textFieldSubject;
 
   @override
   void initState() {
@@ -31,12 +27,12 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
 
     _textFieldSubject = PublishSubject<String>();
     _textFieldSubject
-      // .map((item) => 'item: $item')
-      // .where((item) => item.length > 9)
-      .debounce(Duration(milliseconds: 500))
-      .listen((data) => print(data));
+        // .map((item) => 'item: $item')
+        // .where((item) => item.length > 9)
+        // .debounce(Duration(milliseconds: 500))
+        .listen((data) => print(data));
 
-    // Observable<String> _observable = 
+    // Observable<String> _observable =
     //Observable(Stream.fromIterable(['hello', '您好']));
     // Observable.fromFuture(Future.value('hello ~'));
     // Observable.just('hello ~');

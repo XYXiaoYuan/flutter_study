@@ -11,10 +11,10 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
   TimeOfDay _selectedTime = TimeOfDay(hour: 9, minute: 30);
 
   Future<void> _selecteDate() async {
-    final DateTime date = await showDatePicker(
-      context: context, 
-      initialDate: _selectedDate, 
-      firstDate: DateTime(1900), 
+    final DateTime? date = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate,
+      firstDate: DateTime(1900),
       lastDate: DateTime(2100),
     );
 
@@ -26,8 +26,8 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
   }
 
   Future<void> _selecteTime() async {
-    final TimeOfDay time = await showTimePicker(
-      context: context, 
+    final TimeOfDay? time = await showTimePicker(
+      context: context,
       initialTime: _selectedTime,
     );
 
@@ -54,24 +54,18 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 InkWell(
-                  onTap: _selecteDate,
-                  child: Row(
-                    children: <Widget>[
+                    onTap: _selecteDate,
+                    child: Row(children: <Widget>[
                       Text(DateFormat.yMMMMd().format(_selectedDate)),
                       Icon(Icons.arrow_drop_down),
-                    ]
-                  )
-                ),
+                    ])),
                 SizedBox(width: 32.0),
                 InkWell(
-                  onTap: _selecteTime,
-                  child: Row(
-                    children: <Widget>[
+                    onTap: _selecteTime,
+                    child: Row(children: <Widget>[
                       Text(_selectedTime.format(context)),
                       Icon(Icons.arrow_drop_down),
-                    ]
-                  )
-                ),
+                    ])),
               ],
             )
           ],

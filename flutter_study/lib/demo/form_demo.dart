@@ -4,14 +4,9 @@ class FormDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('FormDemo'),
-        elevation: 0.0
-      ),
+      appBar: AppBar(title: Text('FormDemo'), elevation: 0.0),
       body: Theme(
-        data: Theme.of(context).copyWith(
-          primaryColor: Colors.black
-        ),
+        data: Theme.of(context).copyWith(primaryColor: Colors.black),
         child: Container(
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -33,21 +28,19 @@ class RegisterDemo extends StatefulWidget {
 
 class _RegisterDemoState extends State<RegisterDemo> {
   final registerFormKey = GlobalKey<FormState>();
-  String username, password;
+  late String username, password;
   bool _autovalidate = false;
 
   void _submiteRegisterForm() {
-    if (registerFormKey.currentState.validate()) {
-      registerFormKey.currentState.save();
+    if (registerFormKey.currentState!.validate()) {
+      registerFormKey.currentState!.save();
 
       debugPrint('username: $username');
       debugPrint('password: $password');
 
-      Scaffold.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Registering......'),
-        )
-      );
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text('Registering......'),
+      ));
     } else {
       setState(() {
         _autovalidate = true;
@@ -55,14 +48,14 @@ class _RegisterDemoState extends State<RegisterDemo> {
     }
   }
 
-  String _validatorUsername(value) {
+  String? _validatorUsername(value) {
     if (value.isEmpty) {
       return 'Username is required';
     }
     return null;
   }
 
-  String _validatorPassword(value) {
+  String? _validatorPassword(value) {
     if (value.isEmpty) {
       return 'Password is required';
     }
@@ -81,7 +74,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
               helperText: '',
             ),
             onSaved: (value) {
-              username = value;
+              username = value ?? "";
             },
             validator: _validatorUsername,
             autovalidate: _autovalidate,
@@ -93,21 +86,20 @@ class _RegisterDemoState extends State<RegisterDemo> {
               helperText: '',
             ),
             onSaved: (value) {
-              password = value;
+              password = value ?? "";
             },
             validator: _validatorPassword,
             autovalidate: _autovalidate,
           ),
           SizedBox(height: 32.0),
           Container(
-            width: double.infinity,
-            child: RaisedButton(
-              color: Theme.of(context).accentColor,
-              child: Text('Register', style: TextStyle(color: Colors.white)),
-              elevation: 1.0,
-              onPressed: _submiteRegisterForm,
-            )
-          )
+              width: double.infinity,
+              child: RaisedButton(
+                color: Theme.of(context).accentColor,
+                child: Text('Register', style: TextStyle(color: Colors.white)),
+                elevation: 1.0,
+                onPressed: _submiteRegisterForm,
+              ))
         ],
       ),
     );
@@ -132,32 +124,29 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
   void initState() {
     super.initState();
     // textEditingController.text = 'hi';
-    textEditingController.addListener(
-      () {
-        debugPrint('input: ${textEditingController.text}');
-      }
-    );
+    textEditingController.addListener(() {
+      debugPrint('input: ${textEditingController.text}');
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: textEditingController,
-      onChanged: (value) {
-        debugPrint('input: $value');
-      },
-      onSubmitted: (value) {
-        debugPrint('submit: $value');
-      },
-      decoration: InputDecoration(
-        icon: Icon(Icons.subject),
-        labelText: 'Title',
-        hintText: 'Enter the post title',
-        // border: InputBorder.none,
-        // border: OutlinenputBorder(),
-        filled: true,
-      )
-    );
+        controller: textEditingController,
+        onChanged: (value) {
+          debugPrint('input: $value');
+        },
+        onSubmitted: (value) {
+          debugPrint('submit: $value');
+        },
+        decoration: InputDecoration(
+          icon: Icon(Icons.subject),
+          labelText: 'Title',
+          hintText: 'Enter the post title',
+          // border: InputBorder.none,
+          // border: OutlinenputBorder(),
+          filled: true,
+        ));
   }
 }
 

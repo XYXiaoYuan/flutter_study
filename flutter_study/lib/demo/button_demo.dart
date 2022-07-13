@@ -6,18 +6,18 @@ class ButtonDemo extends StatelessWidget {
     final Widget flatButtonDemo = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        FlatButton(
+        TextButton(
           onPressed: () {},
           child: Text('Button'),
-          splashColor: Colors.grey,
-          textColor: Theme.of(context).accentColor,
+          // splashColor: Colors.grey,
+          // textColor: Theme.of(context).accentColor,
         ),
-        FlatButton.icon(
+        TextButton.icon(
           onPressed: () {},
           icon: Icon(Icons.add),
           label: Text('Add Button'),
-          splashColor: Colors.grey,
-          textColor: Theme.of(context).accentColor,
+          // splashColor: Colors.grey,
+          // textColor: Theme.of(context).accentColor,
         ),
       ],
     );
@@ -27,33 +27,31 @@ class ButtonDemo extends StatelessWidget {
       children: <Widget>[
         Theme(
           data: Theme.of(context).copyWith(
-            buttonColor: Theme.of(context).accentColor,
-            buttonTheme: ButtonThemeData(
-              textTheme: ButtonTextTheme.primary,
-              // shape: BeveledRectangleBorder(
-              //   borderRadius: BorderRadius.circular(5.0),
-              // )
-              shape: StadiumBorder()
-            )
-          ),
-          child: RaisedButton(
+              buttonColor: Theme.of(context).accentColor,
+              buttonTheme: ButtonThemeData(
+                  textTheme: ButtonTextTheme.primary,
+                  // shape: BeveledRectangleBorder(
+                  //   borderRadius: BorderRadius.circular(5.0),
+                  // )
+                  shape: StadiumBorder())),
+          child: ElevatedButton(
             onPressed: () {},
             child: Text('Button'),
-            splashColor: Colors.grey,
-            elevation: 0.0,
-            color: Theme.of(context).accentColor,
-            // textColor: Theme.of(context).accentColor,
-            textTheme: ButtonTextTheme.primary,
+            // splashColor: Colors.grey,
+            // elevation: 0.0,
+            // color: Theme.of(context).accentColor,
+            // // textColor: Theme.of(context).accentColor,
+            // textTheme: ButtonTextTheme.primary,
           ),
         ),
         SizedBox(width: 16.0),
-        RaisedButton.icon(
+        ElevatedButton.icon(
           onPressed: () {},
           icon: Icon(Icons.add),
           label: Text('Add Button'),
-          splashColor: Colors.grey,
-          textColor: Theme.of(context).accentColor,
-          elevation: 16.0,
+          // splashColor: Colors.grey,
+          // textColor: Theme.of(context).accentColor,
+          // elevation: 16.0,
         ),
       ],
     );
@@ -63,15 +61,13 @@ class ButtonDemo extends StatelessWidget {
       children: <Widget>[
         Theme(
           data: Theme.of(context).copyWith(
-            buttonColor: Theme.of(context).accentColor,
-            buttonTheme: ButtonThemeData(
-              textTheme: ButtonTextTheme.primary,
-              // shape: BeveledRectangleBorder(
-              //   borderRadius: BorderRadius.circular(5.0),
-              // )
-              shape: StadiumBorder()
-            )
-          ),
+              buttonColor: Theme.of(context).accentColor,
+              buttonTheme: ButtonThemeData(
+                  textTheme: ButtonTextTheme.primary,
+                  // shape: BeveledRectangleBorder(
+                  //   borderRadius: BorderRadius.circular(5.0),
+                  // )
+                  shape: StadiumBorder())),
           child: OutlineButton(
             onPressed: () {},
             child: Text('Button'),
@@ -158,10 +154,9 @@ class ButtonDemo extends StatelessWidget {
       children: <Widget>[
         Theme(
           data: Theme.of(context).copyWith(
-            buttonTheme: ButtonThemeData(
-              padding: EdgeInsets.symmetric(horizontal: 64.0),
-            )
-          ),
+              buttonTheme: ButtonThemeData(
+            padding: EdgeInsets.symmetric(horizontal: 64.0),
+          )),
           child: ButtonBar(
             children: <Widget>[
               OutlineButton(
@@ -191,12 +186,9 @@ class ButtonDemo extends StatelessWidget {
         ),
       ],
     );
-    
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text('ButtonDemo'),
-        elevation: 0.0
-      ),
+      appBar: AppBar(title: Text('ButtonDemo'), elevation: 0.0),
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Column(

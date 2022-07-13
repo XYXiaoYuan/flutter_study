@@ -5,14 +5,11 @@ class NavigatorDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            FlatButton(
-              onPressed: null, 
-              child: Text('Home')
-            ),
-            FlatButton(
+          child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          FlatButton(onPressed: null, child: Text('Home')),
+          FlatButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/about');
                 // Navigator.of(context).push(
@@ -21,11 +18,9 @@ class NavigatorDemo extends StatelessWidget {
                 //   )
                 // );
               },
-              child: Text('About')
-            )
-          ],
-        )
-      ),
+              child: Text('About'))
+        ],
+      )),
     );
   }
 }
@@ -33,9 +28,7 @@ class NavigatorDemo extends StatelessWidget {
 class Page extends StatelessWidget {
   final String title;
 
-  Page({
-    this.title
-  });
+  Page({required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +38,10 @@ class Page extends StatelessWidget {
         elevation: 0.0,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pop(context);
-        }, 
-        child: Icon(Icons.arrow_back)
-      ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back)),
     );
   }
 }
