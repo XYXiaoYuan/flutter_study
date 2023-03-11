@@ -2,11 +2,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Yuan-589测试机",
+      "name": "iPhone 13 mini (mobile)",
       "request": "launch",
       "type": "dart",
-      "flutterMode":"profile",
-      "deviceId": "00008030-0019443E3A89802E"
+      // "flutterMode":"release",
+      "deviceId": "E2B6B400-967A-42C2-AA57-F304BCB7857C"
     },
     {
       "name": "4Inch",

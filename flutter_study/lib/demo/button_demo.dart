@@ -68,26 +68,26 @@ class ButtonDemo extends StatelessWidget {
                   //   borderRadius: BorderRadius.circular(5.0),
                   // )
                   shape: StadiumBorder())),
-          child: OutlineButton(
+          child: OutlinedButton(
             onPressed: () {},
             child: Text('Button'),
-            splashColor: Colors.grey,
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
-            // color: Theme.of(context).accentColor,
-            textColor: Colors.black,
-            highlightedBorderColor: Colors.grey,
+            // splashColor: Colors.grey,
+            // borderSide: BorderSide(
+            //   color: Colors.black,
+            // ),
+            // // color: Theme.of(context).accentColor,
+            // textColor: Colors.black,
+            // highlightedBorderColor: Colors.grey,
             // textTheme: ButtonTextTheme.primary,
           ),
         ),
         SizedBox(width: 16.0),
-        OutlineButton.icon(
+        OutlinedButton.icon(
           onPressed: () {},
           icon: Icon(Icons.add),
           label: Text('Add Button'),
-          splashColor: Colors.grey,
-          textColor: Theme.of(context).accentColor,
+          // splashColor: Colors.grey,
+          // textColor: Theme.of(context).accentColor,
         ),
       ],
     );
@@ -97,16 +97,16 @@ class ButtonDemo extends StatelessWidget {
       children: <Widget>[
         Container(
           width: 130.0,
-          child: OutlineButton(
+          child: OutlinedButton(
             onPressed: () {},
             child: Text('Button'),
-            splashColor: Colors.grey,
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
+            // splashColor: Colors.grey,
+            // borderSide: BorderSide(
+            // color: Colors.black,
+            // ),
             // color: Theme.of(context).accentColor,
-            textColor: Colors.black,
-            highlightedBorderColor: Colors.grey,
+            // textColor: Colors.black,
+            // highlightedBorderColor: Colors.grey,
             // textTheme: ButtonTextTheme.primary,
           ),
         ),
@@ -117,32 +117,32 @@ class ButtonDemo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Expanded(
-          child: OutlineButton(
+          child: OutlinedButton(
             onPressed: () {},
             child: Text('Button'),
-            splashColor: Colors.grey,
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
+            // splashColor: Colors.grey,
+            // borderSide: BorderSide(
+            // color: Colors.black,
+            // ),
             // color: Theme.of(context).accentColor,
-            textColor: Colors.black,
-            highlightedBorderColor: Colors.grey,
+            // textColor: Colors.black,
+            // highlightedBorderColor: Colors.grey,
             // textTheme: ButtonTextTheme.primary,
           ),
         ),
         SizedBox(width: 16.0),
         Expanded(
           flex: 2,
-          child: OutlineButton(
+          child: OutlinedButton(
             onPressed: () {},
             child: Text('Button'),
-            splashColor: Colors.grey,
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
-            // color: Theme.of(context).accentColor,
-            textColor: Colors.black,
-            highlightedBorderColor: Colors.grey,
+            // splashColor: Colors.grey,
+            // borderSide: BorderSide(
+            //   color: Colors.black,
+            // ),
+            // // color: Theme.of(context).accentColor,
+            // textColor: Colors.black,
+            // highlightedBorderColor: Colors.grey,
             // textTheme: ButtonTextTheme.primary,
           ),
         ),
@@ -159,27 +159,27 @@ class ButtonDemo extends StatelessWidget {
           )),
           child: ButtonBar(
             children: <Widget>[
-              OutlineButton(
+              OutlinedButton(
                 onPressed: () {},
                 child: Text('Button'),
-                splashColor: Colors.grey,
-                borderSide: BorderSide(
-                  color: Colors.black,
-                ),
+                // splashColor: Colors.grey,
+                // borderSide: BorderSide(
+                // color: Colors.black,
+                // ),
                 // color: Theme.of(context).accentColor,
-                textColor: Colors.black,
-                highlightedBorderColor: Colors.grey,
+                // textColor: Colors.black,
+                // highlightedBorderColor: Colors.grey,
               ),
-              OutlineButton(
+              OutlinedButton(
                 onPressed: () {},
                 child: Text('Button'),
-                splashColor: Colors.grey,
-                borderSide: BorderSide(
-                  color: Colors.black,
-                ),
+                // splashColor: Colors.grey,
+                // borderSide: BorderSide(
+                //   color: Colors.black,
+                // ),
                 // color: Theme.of(context).accentColor,
-                textColor: Colors.black,
-                highlightedBorderColor: Colors.grey,
+                // textColor: Colors.black,
+                // highlightedBorderColor: Colors.grey,
               ),
             ],
           ),
