@@ -46,9 +46,9 @@ class _CardDemoState extends State<CardDemo> {
                   ButtonTheme(
                       child: ButtonBar(
                     children: <Widget>[
-                      FlatButton(
+                      TextButton(
                           onPressed: () {}, child: Text('Like'.toUpperCase())),
-                      FlatButton(
+                      TextButton(
                           onPressed: () {}, child: Text('Read'.toUpperCase())),
                     ],
                   ))

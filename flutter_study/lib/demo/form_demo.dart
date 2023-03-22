@@ -38,7 +38,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
       debugPrint('username: $username');
       debugPrint('password: $password');
 
-      Scaffold.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Registering......'),
       ));
     } else {
@@ -77,7 +77,7 @@ class _RegisterDemoState extends State<RegisterDemo> {
               username = value ?? "";
             },
             validator: _validatorUsername,
-            autovalidate: _autovalidate,
+            // autovalidate: _autovalidate,
           ),
           TextFormField(
             obscureText: true,
@@ -89,15 +89,13 @@ class _RegisterDemoState extends State<RegisterDemo> {
               password = value ?? "";
             },
             validator: _validatorPassword,
-            autovalidate: _autovalidate,
+            // autovalidate: _autovalidate,
           ),
           SizedBox(height: 32.0),
           Container(
               width: double.infinity,
-              child: RaisedButton(
-                color: Theme.of(context).accentColor,
+              child: ElevatedButton(
                 child: Text('Register', style: TextStyle(color: Colors.white)),
-                elevation: 1.0,
                 onPressed: _submiteRegisterForm,
               ))
         ],
